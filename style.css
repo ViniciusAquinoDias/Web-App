@@ -1,0 +1,61 @@
+:root{
+    --font:'Inter', sans-serif;
+}
+h1, p{
+    font-family: var(--font);
+    color: rgb(215, 222, 227);
+}
+span{
+font-family: var(--font);
+    color: rgb(215, 222, 227);
+}
+p{
+    margin-top: 5px;
+
+}
+body{
+    background-color: rgb(17, 17, 38);
+    text-align: center;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+    
+}
+
+.url, .validar{
+    font-family: var(--font);
+    padding: 10px;
+}
+.url{
+    width: 55%;
+}
+
+.url::placeholder{
+    font-size: 0.95rem;
+    text-align: center;
+    
+}
+.validar::placeholder{
+    font-size: 1rem;
+}
+.validar{
+    width: 18%;
+}
+.imagem_thumb{
+
+    margin: 20px;
+}
+@media (max-width:500px){
+    .url::placeholder{
+        text-align: center;
+        
+    }
+    .validar::placeholder{
+        text-align: center;
+    }
+}
+#ex{
+    color: red;
+}

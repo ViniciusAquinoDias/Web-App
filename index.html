@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <meta name="keywords" content="youtube, thumbnail, fotos do youtube">
+    <meta name="description" content="Pegue suas thumbnails prediletas">
+    <meta name="author" content="Webbuser">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2567831652309467"
+     crossorigin="anonymous"></script>
+
+    <title>WebThumb</title>
+</head>
+<body>
+    <h1 class="titulo_pincipal">Webthumb</h1>
+    <p>Pegue suas thumbnail preferidas</p>
+    <span>Pegue suas thumbs prediletas do youtube pelo google</span>
+
+    <div class="container">
+        <input type="text" placeholder="Coloque a URL do video aqui" class="url">
+        <button class="validar">Enviar URL</button>
+    </div>
+    <span>Basta ir no google e pesquisar por seu video predileto e colar acima</span>
+        <span>Ex: https://www.youtube.com/watch?</span>
+        <span id="ex">v=6hzrDeceEKc&list=RDu1V8YRJnr4Q&index=18<br></span>
+        <span> que conter expecialmente está parte em vermelho para funcionar </span>
+
+    <div class="imagem_thumb"></div>
+
+
+    <script>
+        const envurl = document.querySelector('.url')
+        const envio = document.querySelector('.validar')
+        const thumbView = document.querySelector('.imagem_thumb')
+        
+        envio.addEventListener('click', () =>{
+            const url = envurl.value
+
+            if(url == '' || url == 'null' || url == '0'){
+                alert('ERRO! VOCÊ ESQUECEU DA URL')
+            }
+            else{
+                const valor = url.split('watch')[1]
+            const idurl = new URLSearchParams(valor).get('v')
+            const thubnailURL = `https://img.youtube.com/vi/${idurl}/mqdefault.jpg`;
+    
+            const img = document.createElement('img');
+              img.src = thubnailURL;
+              thumbView.appendChild(img);
+              envurl.value = '';
+            }
+        })
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2567831652309467"
+    crossorigin="anonymous"></script>
+</body>
+</html>
